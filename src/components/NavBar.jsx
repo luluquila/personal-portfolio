@@ -4,6 +4,22 @@ import { AppBar, Toolbar, Typography, Button, Stack, styled } from '@mui/materia
 
 export function NavBar() {
 
+    const scrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({
+                behaviour: 'smooth',
+                block: 'start'
+            });
+        }
+    };
+
+    const navItems = [
+        { label: 'Home', id: 'home' },
+        { label: 'Skills', id: 'skills' },
+        { label: 'Projects', id: 'projects'}
+    ]
+
     const CustomTypography = styled(Typography)({
         fontFamily: '"Spectral-Regular", serif',
         fontWeight: 1000
@@ -19,9 +35,9 @@ export function NavBar() {
             <Toolbar>
                 <CustomTypography variant="h6" sx={{ flexGrow: 1}}>Logo</CustomTypography>
                 <Stack direction="row" spacing={2}>
-                    <CustomButton color="inherit">Home</CustomButton>
-                    <CustomButton color="inherit">Skills</CustomButton>
-                    <CustomButton color="inherit">Projects</CustomButton>
+                    {navItems.map((item) => (
+                        <CustomButton key={item.id} color="inherit" onClick={() => scrollToSection(item.id)}>{item.label}</CustomButton>
+                    ))}      
                 </Stack>
             </Toolbar>
         </AppBar>
