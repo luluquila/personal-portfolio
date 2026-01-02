@@ -21,6 +21,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Spectral-Bold';
+  src: url('./assert/Spectral-font/Spectral-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
 /* a {
   font-weight: 500;
   color: #646cff;
