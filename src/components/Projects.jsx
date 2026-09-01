@@ -99,7 +99,10 @@ export function Projects() {
                                     gap: 1, margin: '5px'}}>{project.technologies.map((technology, index) => 
                                         {return <BoldCustomTypography key={index}>{technology}</BoldCustomTypography>})}
                                 </Box>
-                                <Tooltip title="View Code on GitHub">
+                                <Box sx={{display: 'flex', flexWrap: 'wrap',
+                                    flexDirection: 'row', justifyContent: 'center', 
+                                    gap: 1, margin: '5px'}}>
+                                    <Tooltip title="View Code on GitHub">
                                     <IconButton 
                                         href={project.codeLink}
                                         target="_blank"
@@ -121,6 +124,7 @@ export function Projects() {
                                         <OpenInNewIcon sx={{ fontSize: 32 }}/>
                                     </IconButton>
                                     </Tooltip>
+                                </Box>
                             </Box>
                         </Box>
                         
